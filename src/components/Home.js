@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { HorizontalBar } from "react-chartjs-2";
-import data2 from "../data/data.json";
+import dataJson from "../data/data.json";
 import startCase from "lodash/startCase";
 
 class Home extends Component {
@@ -18,16 +18,16 @@ class Home extends Component {
   }
 
   render() {
-    console.log(data2);
+    console.log(dataJson);
 
     const yAxis = "country";
     const xAxis = this.state.value;
     //make dropdown array and remove country
-    let Categories = Object.keys(data2[0]).filter(item => item !== "country");
+    let Categories = Object.keys(dataJson[0]).filter(item => item !== "country");
     console.log(Categories);
 
     const data = {
-      labels: data2.map(item => {
+      labels: dataJson.map(item => {
         return item[yAxis];
       }),
       datasets: [
@@ -38,7 +38,7 @@ class Home extends Component {
           borderWidth: 1,
           hoverBackgroundColor: "rgba(255,99,132,0.4)",
           hoverBorderColor: "rgba(255,99,132,1)",
-          data: data2.map(item => {
+          data: dataJson.map(item => {
             return item[xAxis];
           })
         }
@@ -47,15 +47,13 @@ class Home extends Component {
     return (
       <div>
         <label>
-          Pick your favorite xAxis:
+          Pick your category:
           <select value={this.state.value} onChange={this.handleChange}>
             {Categories.map(item => {
               return <option value={item}>{startCase(item)}</option>;
             })}
           </select>
         </label>
-
-        <h2>Horizontal Bar Example</h2>
         <HorizontalBar data={data} />
       </div>
     );
