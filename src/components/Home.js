@@ -4,9 +4,12 @@ import data2 from "../data/data.json";
 
 console.log(data2);
 
+const yAxis = "country";
+const xAxis = "lifeExpectancy";
+
 const data = {
   labels: data2.map(item => {
-    return item.country;
+    return item[yAxis];
   }),
   datasets: [
     {
@@ -17,7 +20,7 @@ const data = {
       hoverBackgroundColor: "rgba(255,99,132,0.4)",
       hoverBorderColor: "rgba(255,99,132,1)",
       data: data2.map(item => {
-        return item.lifeExpectancy;
+        return item[xAxis];
       })
     }
   ]
