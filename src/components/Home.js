@@ -1,8 +1,13 @@
 import React, { Component } from "react";
 import { HorizontalBar } from "react-chartjs-2";
+import data2 from "../data/data.json";
+
+console.log(data2);
 
 const data = {
-  labels: ["January", "February", "March", "April", "May", "June", "July"],
+  labels: data2.map(item => {
+    return item.country;
+  }),
   datasets: [
     {
       label: "My First dataset",
