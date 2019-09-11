@@ -9,7 +9,6 @@ class Home extends Component {
     this.state = {
       value: "lifeExpectancy"
     };
-
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -19,7 +18,6 @@ class Home extends Component {
 
   render() {
     console.log(dataJson);
-
     const yAxis = "country";
     const xAxis = this.state.value;
     //make dropdown array and remove country
@@ -46,15 +44,19 @@ class Home extends Component {
     };
     return (
       <div>
+        <HorizontalBar data={data} width={400} />
         <label>
-          Pick your category:
+          &nbsp; Pick your category: &nbsp;
           <select value={this.state.value} onChange={this.handleChange}>
-            {Categories.map(item => {
-              return <option value={item}>{startCase(item)}</option>;
+            {Categories.map((item, index) => {
+              return (
+                <option value={item} key={index}>
+                  {startCase(item)}
+                </option>
+              );
             })}
           </select>
         </label>
-        <HorizontalBar data={data} />
       </div>
     );
   }
