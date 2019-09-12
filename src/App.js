@@ -1,13 +1,27 @@
 import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
+import TopNav from "./components/TopNav"
+import About from "./components/About";
+import Contact from "./components/Contact"
 
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Home></Home>
-    </div>
+      <BrowserRouter>
+          <TopNav/>
+          <div>
+            <Switch>
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/about" component={About}/>
+            <Route exact path="/contact" component={Contact}/>
+            </Switch>
+          </div>
+        </BrowserRouter>
+      </div>
+
   );
 }
 
