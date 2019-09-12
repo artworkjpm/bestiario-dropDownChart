@@ -13,7 +13,7 @@ const Contact = () => {
         </p>
         <p>
           <b>Website: </b>
-          <a href="https://jpm.netlify.com" target="_blank">
+          <a href="https://jpm.netlify.com" target="_blank" rel="noopener noreferrer">
             jpm.netlify.com
           </a>{" "}
           - (website made recently with React and Bootstrap)

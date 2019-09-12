@@ -21,9 +21,7 @@ class Home extends Component {
     const yAxis = "country";
     const xAxis = this.state.value;
     //make dropdown array and remove country
-    let Categories = Object.keys(dataJson[0]).filter(
-      item => item !== "country"
-    );
+    let Categories = Object.keys(dataJson[0]).filter(item => item !== "country");
     console.log(Categories);
 
     const data = {
@@ -57,7 +55,7 @@ class Home extends Component {
 
     return (
       <div className="container">
-        <HorizontalBar data={data} options={options} />
+        <HorizontalBar data={data} options={options} height="800" />
         <label>
           <span className="pick">Pick a category:</span>
           <select value={this.state.value} onChange={this.handleChange}>
