@@ -60,6 +60,11 @@ option {
   display: none;
 }
 
+.col-jm {
+  width: 50%;
+  margin: 0 auto;
+}
+
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {
@@ -68,6 +73,9 @@ option {
   .topnav .icon {
     float: right;
     display: block;
+  }
+  .col-jm {
+    width: 100%;
   }
 }
 
@@ -86,4 +94,8 @@ option {
     display: block;
     text-align: left;
   }
+}
+
+.pick {
+  margin-right: 10px;
 }

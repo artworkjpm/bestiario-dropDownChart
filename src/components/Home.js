@@ -59,7 +59,7 @@ class Home extends Component {
       <div className="container">
         <HorizontalBar data={data} options={options} />
         <label>
-          &nbsp; Pick your category: &nbsp;
+          <span className="pick">Pick your category:</span>
           <select value={this.state.value} onChange={this.handleChange}>
             {Categories.map((item, index) => {
               return (
