@@ -17,12 +17,10 @@ class Home extends Component {
   }
 
   render() {
-    console.log(dataJson);
     const yAxis = "country";
     const xAxis = this.state.value;
     //make dropdown array and remove country
     let Categories = Object.keys(dataJson[0]).filter(item => item !== "country");
-    console.log(Categories);
 
     const data = {
       labels: dataJson.map(item => {
@@ -50,12 +48,25 @@ class Home extends Component {
         labels: {
           fontSize: 20
         }
+      },
+
+      scales: {
+        yAxes: [
+          {
+            gridLines: {
+              offsetGridLines: true
+            },
+            ticks: {
+              fontSize: 14
+            }
+          }
+        ]
       }
     };
 
     return (
       <div className="container">
-        <HorizontalBar data={data} options={options} height="800" />
+        <HorizontalBar data={data} options={options} />
         <label>
           <span className="pick">Pick a category:</span>
           <select value={this.state.value} onChange={this.handleChange}>

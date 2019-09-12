@@ -8,17 +8,23 @@ class TopNav extends Component {
       condition: false
     };
     this.handleClick = this.handleClick.bind(this);
+    this.handleHome = this.handleHome.bind(this);
   }
   handleClick() {
     this.setState({
       condition: !this.state.condition
     });
   }
+  handleHome() {
+    this.setState({
+      condition: false
+    });
+  }
 
   render() {
     return (
       <div className={this.state.condition ? "topnav responsive" : "topnav"}>
-        <Link to="/" className="active" onClick={this.handleClick}>
+        <Link to="/" className="active" onClick={this.handleHome}>
           Home
         </Link>
         <Link to="/about" onClick={this.handleClick}>
