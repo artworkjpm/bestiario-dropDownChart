@@ -10,6 +10,7 @@ select {
   font-size: 1.2em;
   padding: 5px;
   text-indent: 5px;
+  max-width: 300px;
 }
 option {
   padding: 5px;
