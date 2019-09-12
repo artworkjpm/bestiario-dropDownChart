@@ -91,3 +91,9 @@ option {
 .pick {
   margin-right: 10px;
 }
+
+.centerLink {
+  position: relative;
+  top: -9px;
+  left: 8px;
+}
