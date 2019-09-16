@@ -80,6 +80,12 @@ class Home extends Component {
           </select>
         </div>
         <HorizontalBar data={data} options={options} />
+        <div className="center grey">
+          Data from{" "}
+          <a href="http://www.oecdbetterlifeindex.org" target="_blank" rel="noopener noreferrer">
+            OCD Better Life Index 2019
+          </a>
+        </div>
       </div>
     );
   }

@@ -108,3 +108,9 @@ option {
   text-align: center;
   margin-bottom: 20px;
 }
+.grey,
+.grey a {
+  color: grey;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
