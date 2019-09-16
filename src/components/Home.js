@@ -47,7 +47,9 @@ class Home extends Component {
       legend: {
         labels: {
           fontSize: 20
-        }
+        },
+        onClick: e => e.stopPropagation(),
+        position: "bottom"
       },
 
       scales: {
@@ -66,9 +68,7 @@ class Home extends Component {
 
     return (
       <div className="container">
-        <HorizontalBar data={data} options={options} />
-        <label>
-          <span className="pick">Pick a category:</span>
+        <div className="center">
           <select value={this.state.value} onChange={this.handleChange}>
             {Categories.map((item, index) => {
               return (
@@ -78,7 +78,8 @@ class Home extends Component {
               );
             })}
           </select>
-        </label>
+        </div>
+        <HorizontalBar data={data} options={options} />
       </div>
     );
   }

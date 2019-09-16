@@ -7,7 +7,7 @@ canvas {
 
 select {
   height: 40px;
-  font-size: 1.2em;
+  font-size: 1.1em;
   padding: 5px;
   text-indent: 5px;
   max-width: 300px;
@@ -97,4 +97,8 @@ option {
   position: relative;
   top: -9px;
   left: 8px;
+}
+.center {
+  text-align: center;
+  margin-bottom: 20px;
 }
